@@ -3,4 +3,4 @@
 
 .score-note{font-size:8px;letter-spacing:1px;color:#94a8a9;margin:15px 0 10px}#micOff{font-size:10px;color:var(--lime);padding:8px 0 0}button[hidden]{display:none}
 
-.project-logos{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;margin:0 40px 42px;padding:8px 0}.project-logos>svg{position:absolute;overflow:hidden}.project-logos a{display:block;padding:5px}.project-logos img{display:block;object-fit:contain;filter:url(#logo-outline)}.portsmouth-logo{width:auto;height:102px}.pycbc-logo{width:205px;height:auto}@media(max-width:480px){.project-logos{gap:32px;margin:0 22px 30px}.portsmouth-logo{height:84px}.pycbc-logo{width:170px}}
+.project-logos{display:flex;align-items:center;justify-content:center;gap:64px;flex-wrap:wrap;margin:28px 40px 0;padding:8px 0}.project-logos>svg{position:absolute;overflow:hidden}.project-logos a{display:block;padding:5px}.project-logos img{display:block;object-fit:contain;filter:url(#logo-outline)}.portsmouth-logo{width:auto;height:102px}.pycbc-logo{width:205px;height:auto}@media(max-width:480px){.project-logos{gap:32px;margin:22px 22px 0}.portsmouth-logo{height:84px}.pycbc-logo{width:170px}}
