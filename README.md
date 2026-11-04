@@ -37,3 +37,5 @@ The logo pairs an open orbit with a waveform increasing in amplitude and frequen
 ## GitHub Pages
 
 The Pages workflow tests the application and deploys `dist/` on every push to `main`. In repository **Settings → Pages**, the build source must be **GitHub Actions**. Workflow permissions grant Pages deployment access only to the deployment job. Assets use relative URLs for project-site hosting.
+
+University of Portsmouth and PyCBC logos link to their respective websites. The original assets are from [Portsmouth's official site](https://www.port.ac.uk/themes/custom/portsmouth/logo.svg) and the [PyCBC logo repository](https://github.com/gwastro/pycbc-logo). A thin white outline is applied at display time to improve contrast on the dark background.
