@@ -10,3 +10,5 @@ header .header-links{display:flex;align-items:center;gap:22px;margin:0}header .h
 header .gwpiano-link{display:block;line-height:0}header .gwpiano-link img{display:block;width:124px;height:70px;object-fit:contain}@media(max-width:540px){header .gwpiano-link img{width:100px;height:56px}}
 
 header .gwpiano-link{display:flex;flex-direction:column;align-items:center;gap:4px;padding:5px 10px;border:1px solid #52634a;border-radius:7px;color:var(--lime);text-decoration:none;transition:background .15s,border-color .15s}header .gwpiano-link span{font-size:11px;font-weight:600;line-height:1.4;text-decoration:underline;text-underline-offset:3px}header .gwpiano-link:hover,header .gwpiano-link:focus-visible{background:#29362c;border-color:var(--lime)}
+
+.scope{position:relative}.countdown{position:absolute;inset:40px 0 30px;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-size:86px;font-weight:700;color:var(--lime);background:#101a1edd;z-index:1}.countdown[hidden]{display:none}

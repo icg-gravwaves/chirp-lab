@@ -8,7 +8,7 @@ Serve `dist/` with any static web server, or run `npm start` and open http://loc
 
 ## Play
 
-Select **Start listening**, allow the microphone, and hum or whistle a low-to-high sweep whenever you like. A brief pause ends each attempt. Listening continues until paused or the page is closed. The detector follows the ambient noise floor. Attempts can have different durations; sounds shorter than 0.4 seconds are ignored and an eight-second buffer limit splits long sounds. The reference chirp lasts 1.5 seconds. Reference playback suspends detection to avoid scoring the speakers.
+Select **Record a chirp** and allow the microphone. Stay quiet during the three-second countdown, then hum or whistle a low-to-high sweep for 1.5 seconds. The first countdown second measures the room noise. The microphone turns off after each attempt; press the button again to retry. You can cancel during the countdown or recording. The reference chirp also lasts 1.5 seconds.
 
 Five levels introduce simulated noise, an envelope consistency check, and a sine-Gaussian veto analogy. Select a low, standard, or whistle register in **Inside the detector**. Demo runs illustrate the target without unlocking levels. Progress is stored locally in the browser.
 
@@ -24,13 +24,13 @@ See the [PyCBC veto documentation](https://pycbc.org/pycbc/latest/html/pycbc.vet
 
 ## Privacy and compatibility
 
-Microphone samples are processed in browser memory, with no audio upload or recording persistence. Only level progress is written to local storage. Close the page or press **Pause listening** to stop the microphone. Browser permission and a user gesture are required before listening begins.
+Microphone samples are processed in browser memory, with no audio upload or recording persistence. Only level progress is written to local storage. Close the page or press **Cancel recording** to stop the microphone. Browser permission and a user gesture are required before listening begins.
 
 Capture uses Web Audio's ScriptProcessorNode for compatibility. This API is deprecated; browsers that remove it require an AudioWorklet implementation. Background tabs may throttle capture.
 
 ## Source and branding
 
-`dist/app.js` controls the experience, `dist/listener.js` segments microphone audio, and `dist/dsp.js` calculates scores. Tests exercise repeated attempts, variable durations, noise, silence, inconsistent envelopes, and glitches.
+`dist/app.js` controls the experience, `dist/dsp.js` calculates scores. Tests exercise noise, silence, inconsistent envelopes, glitches, and the sound segmentation helper.
 
 The logo pairs an open orbit with a waveform increasing in amplitude and frequency. `dist/assets/chirp-lab.svg` is the transparent mark; `dist/assets/chirp-lab-mark.svg` is the dark tile and favicon. Colours: lime `#d6f489`, dark teal `#10191d`, cyan `#72d4d2`.
 
