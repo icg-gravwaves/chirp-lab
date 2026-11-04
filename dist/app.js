@@ -1,5 +1,5 @@
 import {SoundListener} from './listener.js?v=2';
-import{RATE,DURATION,frequency,envelope,synth,resample,analyze,random,spectrum}from'./dsp.js?v=2';
+import{RATE,DURATION,frequency,envelope,synth,resample,analyze,random,spectrum}from'./dsp.js?v=4';
 const $=id=>document.getElementById(id),canvas=$('scope'),ctx=canvas.getContext('2d');
 const levels=[['First contact','A chirp in the quiet','Follow the dashed curve with a low-to-high hum or whistle. Chirp whenever you like; pause briefly between attempts.',0,55],['Through the static','Find it in the noise','The same chirp, with simulated noise mixed into your recording. Keep your sweep smooth.',1.5,55],['Deep space','Keep your signal clear','More noise, same mission. A sustained rising pitch matters more than volume.',3,52],['Shape matters','Every part tells a story','The χ² consistency check is now active. Keep the sound smooth across the whole sweep.',3,52],['Glitch hunter','Make a signal that belongs','The sine-Gaussian veto is active too. Finish cleanly: avoid clicks, pops, and a sharp squeak.',4,50]];
 let unlocked=0;try{unlocked=Math.min(4,Math.max(0,Number(localStorage.getItem('chirplab-progress'))||0))}catch{}

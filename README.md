@@ -8,7 +8,7 @@ Serve `dist/` with any static web server, or run `npm start` and open http://loc
 
 ## Play
 
-Select **Start listening**, allow the microphone, and hum or whistle a low-to-high sweep whenever you like. A brief pause ends each attempt. Listening continues until paused or the page is closed. The detector follows the ambient noise floor. Attempts can have different durations; sounds shorter than 0.4 seconds are ignored and an eight-second buffer limit splits long sounds. Reference playback suspends detection to avoid scoring the speakers.
+Select **Start listening**, allow the microphone, and hum or whistle a low-to-high sweep whenever you like. A brief pause ends each attempt. Listening continues until paused or the page is closed. The detector follows the ambient noise floor. Attempts can have different durations; sounds shorter than 0.4 seconds are ignored and an eight-second buffer limit splits long sounds. The reference chirp lasts 1.5 seconds. Reference playback suspends detection to avoid scoring the speakers.
 
 Five levels introduce simulated noise, an envelope consistency check, and a sine-Gaussian veto analogy. Select a low, standard, or whistle register in **Inside the detector**. Demo runs illustrate the target without unlocking levels. Progress is stored locally in the browser.
 
