@@ -1,0 +1,10 @@
+// Segment microphone sound using an adaptive room-noise floor and pauses.
+export class SoundListener {
+  constructor(rate){this.rate=rate;this.history=[];this.pre=[];this.quiet=[];this.active=false;this.frames=[];this.silent=0;this.loud=0;this.elapsed=0;this.cooldown=0;this.threshold=.004;}
+  join(frames){const out=new Float32Array(frames.reduce((s,x)=>s+x.length,0));let offset=0;for(const x of frames){out.set(x,offset);offset+=x.length}return out;}
+  push(input){const frame=new Float32Array(input),dt=frame.length/this.rate;let mean=0,power=0;for(const x of frame)mean+=x;mean/=frame.length;for(let i=0;i<frame.length;i++){frame[i]-=mean;power+=frame[i]**2}const rms=Math.sqrt(power/frame.length);this.history.push(rms);if(this.history.length>Math.ceil(4/dt))this.history.shift();
+    if(!this.active){const sorted=this.history.slice().sort((a,b)=>a-b);const floor=this.history.length>12?sorted[Math.floor(sorted.length*.2)]:.001;this.threshold=Math.max(.004,floor*2.6);this.pre.push(frame);if(this.pre.length>Math.ceil(.1/dt))this.pre.shift();this.cooldown=Math.max(0,this.cooldown-dt);if(rms>this.threshold&&this.cooldown===0)this.loud++;else{this.loud=0;if(rms<=this.threshold){this.quiet.push(frame);if(this.quiet.length>Math.ceil(1.2/dt))this.quiet.shift()}}if(this.loud>=2){this.active=true;this.frames=this.pre.slice();this.background=this.quiet.length?this.join(this.quiet):new Float32Array(this.rate);this.elapsed=this.frames.length*dt;this.silent=0;this.lastVoice=this.frames.length;return{started:true,active:true,rms}}return{active:false,rms};}
+    this.frames.push(frame);this.elapsed+=dt;if(rms>this.threshold*.7){this.silent=0;this.lastVoice=this.frames.length}else this.silent+=dt;
+    if(this.silent>=.3||this.elapsed>=8){const audio=this.join(this.frames.slice(0,this.lastVoice));const background=this.background;this.active=false;this.frames=[];this.pre=[];this.loud=0;this.cooldown=.2;return{active:false,rms,ended:{audio,background,duration:audio.length/this.rate}}}return{active:true,rms};
+  }
+}
