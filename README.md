@@ -8,9 +8,9 @@ Serve `dist/` with any static web server, or run `npm start` and open http://loc
 
 ## Play
 
-Select **Record a chirp** and allow the microphone. Stay quiet during the three-second countdown, then hum or whistle a low-to-high sweep for 1.5 seconds. The first countdown second measures the room noise. The microphone turns off after each attempt; press the button again to retry. You can cancel during the countdown or recording. The reference chirp also lasts 1.5 seconds.
+Select **Start** and allow the microphone. The reference chirp plays first; then stay quiet during the three-second countdown, then hum or whistle a low-to-high sweep for 1.5 seconds. The first countdown second measures the room noise. The microphone turns off after each attempt; press the button again to retry. You can cancel during the countdown or recording. The reference chirp also lasts 1.5 seconds.
 
-Five levels introduce simulated noise, an envelope consistency check, and a sine-Gaussian veto analogy. Select a low, standard, or whistle register in **Inside the detector**. Demo runs illustrate the target without unlocking levels. Progress is stored locally in the browser.
+Five levels introduce simulated noise, an envelope consistency check, and a sine-Gaussian veto analogy. Select a low, standard, or whistle register in **Inside the detector**. Progress is stored locally in the browser.
 
 ## Scientific scope
 
